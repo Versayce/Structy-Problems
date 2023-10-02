@@ -26,6 +26,17 @@ const anagrams = (s1, s2) => {
       };
     });
     return result;
+
+/*
+    // Alternate method of iterating through the object (from official solution)
+
+    for (let key in frequency) {
+    if (frequency[key] !== 0) {
+      return false
+      }
+    }
+    return true
+*/
 };
 
 //Tests
