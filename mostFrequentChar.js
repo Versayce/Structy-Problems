@@ -5,7 +5,7 @@ const mostFrequentChar = (s) => {
     for (char of s) {
       if (!frequency[char]) frequency[char] = 1;
       else frequency[char] += 1;
-    }
+    };
     
     Object.entries(frequency).map(([key, val]) => {
       if (!mostFrequent) mostFrequent = key;
