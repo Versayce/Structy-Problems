@@ -21,3 +21,5 @@ console.log(mostFrequentChar('mississippi')); // -> 'i'
 console.log(mostFrequentChar('potato')); // -> 'o'
 console.log(mostFrequentChar('eleventennine')); // -> 'e'
 console.log(mostFrequentChar("riverbed")); // -> 'r'
+
+
