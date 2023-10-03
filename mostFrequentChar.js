@@ -10,7 +10,7 @@ const mostFrequentChar = (s) => {
     Object.entries(frequency).map(([key, val]) => {
       if (!mostFrequent) mostFrequent = key;
       else if (val > frequency[mostFrequent]) mostFrequent = key;
-    })
+    });
     return mostFrequent;
   };
 
