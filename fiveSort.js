@@ -14,3 +14,8 @@ const fiveSort = (nums) => {
   console.log(nums)
   return nums;
 };
+
+//tests
+fiveSort([12, 5, 1, 5, 12, 7]);
+fiveSort([5, 2, 5, 6, 5, 1, 10, 2, 5, 5]);
+fiveSort([5, 5, 5, 1, 1, 1, 4]);
