@@ -1,8 +1,7 @@
 const intersection = (a, b) => {
-    const frequency =  new Set();
+    const frequency =  new Set(a);
     const result = [];
     
-    a.forEach(num => frequency.add(num));
     b.forEach(num => { 
       if (frequency.has(num)) result.push(num) 
     });
