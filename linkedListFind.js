@@ -17,16 +17,32 @@ c.next = d;
 // a -> b -> c -> d
 
 
+// const linkedListFind = (head, target) => {
+//     while (head !== null) {
+//         if (head.val === target) {
+//             console.log(true);
+//             return true;
+//         };
+//         head = head.next;
+//     };
+//     console.log(false);
+//     return false;
+// };
+
 const linkedListFind = (head, target) => {
-    while (head !== null) {
-        if (head.val === target) {
-            console.log(true);
-            return true;
-        };
-        head = head.next;
+    _linkedListFind(head, target);
+};
+
+const _linkedListFind = (head, target) => {
+    if (head === null) {
+        console.log(false);
+        return false
     };
-    console.log(false);
-    return false;
+    if (head.val === target) {
+        console.log(true);
+        return true
+    };
+    _linkedListFind(head.next, target);
 };
 
 linkedListFind(a, "c");
