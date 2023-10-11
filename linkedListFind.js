@@ -16,7 +16,7 @@ c.next = d;
 
 // a -> b -> c -> d
 
-
+// //Standard looping solution:
 // const linkedListFind = (head, target) => {
 //     while (head !== null) {
 //         if (head.val === target) {
@@ -29,7 +29,7 @@ c.next = d;
 //     return false;
 // };
 
-
+//Recursive Solution:
 const linkedListFind = (head, target) => {
     if (head === null) {
         console.log(false);
