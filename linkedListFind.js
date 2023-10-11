@@ -29,11 +29,8 @@ c.next = d;
 //     return false;
 // };
 
-const linkedListFind = (head, target) => {
-    _linkedListFind(head, target);
-};
 
-const _linkedListFind = (head, target) => {
+const linkedListFind = (head, target) => {
     if (head === null) {
         console.log(false);
         return false
@@ -42,7 +39,7 @@ const _linkedListFind = (head, target) => {
         console.log(true);
         return true
     };
-    _linkedListFind(head.next, target);
+    return linkedListFind(head.next, target);
 };
 
 linkedListFind(a, "c");
