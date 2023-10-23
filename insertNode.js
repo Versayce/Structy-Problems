@@ -27,3 +27,22 @@ const insertNode = (head, value, index) => {
   }
   return head;
 };
+
+
+const insertNode = (head, value, index, indexCount = 0) => {
+  if (index === 0) {
+      const newNode = new Node(value);
+      newNode.next = head;
+      return newNode;
+  };
+  
+  if (indexCount === index - 1) {
+    const next = head.next;
+    head.next = new Node(value);
+    head.next.next = next;
+    return head;
+  };
+  
+  insertNode(head.next, value, index, indexCount + 1); 
+  return head
+};
