@@ -18,3 +18,8 @@ const createLinkedList = (values) => {
   return head.next;
 };
 
+//Tests:
+createLinkedList(["h", "e", "y"]);
+// h -> e -> y
+createLinkedList([1, 7, 1, 8]);
+// 1 -> 7 -> 1 -> 8
