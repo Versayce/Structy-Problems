@@ -1,11 +1,6 @@
-class Node {
-  constructor(val) {
-    this.val = val;
-    this.left = null;
-    this.right = null;
-  }
-}
-
+// Space Complexiy: O(n)
+// O(n) recursive calls
+// additional run time is added because of the nested loops in each sub call O(n^2)
 const allTreePaths = (root) => {
     if (root === null) return [];
     if (root.left === null && root.right === null) return [[root.val]];
@@ -13,17 +8,24 @@ const allTreePaths = (root) => {
     
     const leftPaths = allTreePaths(root.left);
     for (let subPath of leftPaths) {
-      paths.push([root.val, ...subPath]);
+        paths.push([root.val, ...subPath]);
     }
-      
+    
     const rightPaths = allTreePaths(root.right);
     for (let subPath of rightPaths) {
-      paths.push([root.val, ...subPath]);
+        paths.push([root.val, ...subPath]);
     }
     
     return paths;
 };
 
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.left = null;
+    this.right = null;
+  }
+}
 //TESTS
 // const a = new Node('a');
 // const b = new Node('b');
