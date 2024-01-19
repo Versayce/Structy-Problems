@@ -15,6 +15,15 @@ const howHigh = (node) => {
 
 };
 
+// // Second Solve
+// const howHigh = (node) => {
+//   if (node === null) return -1;
+//   const leftTreeLength = howHigh(node.left)
+//   const rightTreeLength = howHigh(node.right)
+  
+//   return Math.max(leftTreeLength, rightTreeLength) + 1;
+// };
+
 //Test 1
 
 const a = new Node('a');
