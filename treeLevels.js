@@ -1,5 +1,26 @@
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.left = null;
+    this.right = null;
+  }
+}
+
 const treeLevels = (root) => {
-  
+    let stack = [[root, 0]];
+    let levels = [[]];
+    
+    while (stack.length !== 0) {
+      if (root === null) return []
+      const current = stack.pop();
+      if (!levels[current[1]]) levels[current[1]] = []
+      levels[current[1]].push(current[0].val);  
+      if (current[0].right) stack.push([current[0].right, current[1] + 1]);
+      if (current[0].left) stack.push([current[0].left, current[1] + 1]);
+      console.log(stack)
+    }
+    
+    return levels;
 };
 
 const a = new Node("a");
