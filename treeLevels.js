@@ -6,6 +6,8 @@ class Node {
   }
 }
 
+// Runtime Complexity: O(n)
+// Space Complexity: O(n)
 const treeLevels = (root) => {
     let stack = [[root, 0]];
     let levels = [[]];
