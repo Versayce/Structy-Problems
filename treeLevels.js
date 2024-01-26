@@ -10,7 +10,7 @@ class Node {
 // Space Complexity: O(n)
 const treeLevels = (root) => {
     let stack = [[root, 0]];
-    let levels = [[]];
+    let levels = [];
     
     while (stack.length !== 0) {
       if (root === null) return []
