@@ -8,7 +8,6 @@ class Node {
 
 const levelAverages = (root) => {
     const levels = [];
-    const lvlAvgs = [];
     fillLevels(root, levels, 0);
     
     return levels.map(calcAvg);
