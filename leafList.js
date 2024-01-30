@@ -7,21 +7,17 @@
 // }
 
 const leafList = (root) => {
-    const levels = [];
-    assignLevels(root, levels, 0);
-    console.log(levels[levels.length-1])
-    return levels[levels.length-1]
-  };
-  
-  const assignLevels = (root, levels, levelIndex) => {
     if (root === null) return [];
+    const leaves = [];
+    const stack = [root];
     
-    if (!levels[levelIndex]) {
-      levels.push([root.val]);
-    } else {
-      levels[levelIndex].push(root.val)
+    while (stack.length !== 0) {
+      const current = stack.pop();
+      if (current.left === null && current.right === null) leaves.push(current.val);
+      if (current.right !== null) stack.push(current.right);
+      if (current.left !== null) stack.push(current.left);
     };
     
-    assignLevels(root.left, levels, levelIndex + 1);
-    assignLevels(root.right, levels, levelIndex + 1);
-  };
+    console.log(leaves)
+    return leaves;
+};
