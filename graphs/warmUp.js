@@ -14,7 +14,18 @@ const depthFirstRecursive = (graph, source) => {
     console.log("recursive source: ", source)
     for (let neighbor of graph[source]) {
         depthFirstRecursive(graph, neighbor)
-    }
+    };
+};
+
+const breadthFirstTraversal = (graph, sourceNode) => {
+    const queue = [sourceNode];
+    while (queue.length > 0) {
+        const current = queue.shift();
+        console.log("current element bft:", current)
+        for (let neighbor of graph[current]) {
+            queue.push(neighbor);
+        }
+    };
 };
 
 const graph = {
@@ -27,4 +38,5 @@ const graph = {
 };
 
 // depthFirstPrint(graph, 'a');
-depthFirstRecursive(graph, 'a');
+// depthFirstRecursive(graph, 'a');
+breadthFirstTraversal(graph, 'a')
