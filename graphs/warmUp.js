@@ -10,6 +10,13 @@ const depthFirstPrint = (graph, source) => {
     };
 };
 
+const depthFirstRecursive = (graph, source) => {
+    console.log("recursive source: ", source)
+    for (let neighbor of graph[source]) {
+        depthFirstRecursive(graph, neighbor)
+    }
+};
+
 const graph = {
     a: ['b', 'c'],
     b: ['d'],
@@ -19,4 +26,5 @@ const graph = {
     f: []
 };
 
-depthFirstPrint(graph, 'a')
+// depthFirstPrint(graph, 'a');
+depthFirstRecursive(graph, 'a');
