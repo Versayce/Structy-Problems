@@ -10,6 +10,16 @@ const hasPath = (graph, src, dst) => {
     return false
 };
 
+const hasPathRecursive = (graph, src, dst) => {
+    if (src === dst) return true;
+    
+    for (let neighbor of graph[src]) {
+        if (hasPath(graph, neighbor, dst) === true) return true
+    };
+    
+    return false;
+};
+
 const graph = {
     a: ['b', 'c'],
     b: ['d'],
@@ -21,4 +31,4 @@ const graph = {
 const src = 'a'
 const dst = 'f'
 
-console.log(hasPath(graph, src, dst))
+console.log(hasPathRecursive(graph, src, dst))
