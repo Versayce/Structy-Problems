@@ -25,6 +25,8 @@ const anagrams = (s1, s2) => {
         result = false;
       };
     });
+    console.log('freq: ', frequency)
+
     return result;
 
 /*
