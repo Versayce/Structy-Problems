@@ -1,6 +1,24 @@
 const largestComponent = (graph) => {
-    // todo
+    let largest = 0;
+    const visited = new Set();
+    for (let node in graph) {
+        const size = traversal(graph, node, visited);
+        if (size > largest) largest = size;
+    };
+    
+    return largest;
 };
+  
+const traversal = (graph, currentNode, visited) => {
+    if (visited.has(currentNode)) return 0;
+    visited.add(currentNode);
+    let size = 1;
+    for (let neighbor of graph[currentNode]) {
+        size += traversal(graph, neighbor, visited);
+    };
+    
+    return size;
+}
 
 console.log(largestComponent({
     0: ['8', '1', '5'],
