@@ -1,10 +1,21 @@
 const shortestPath = (edges, nodeA, nodeB) => {
     const graph = createGraph(edges);
     console.log('Built Gaph: ', graph);
-};
-
-const traversal = (graph, currentNode, visited) => {
-
+    const visited = new Set([nodeA]);
+    const queue = [[nodeA, 0]];
+    while(queue.length > 0) {
+      const [currentNode, distance] = queue.shift();
+      if(currentNode === nodeB) return distance;
+      
+      for (let neighbor of graph[currentNode]) {
+        if(!visited.has(neighbor)) {
+          visited.add(neighbor)
+          queue.push([neighbor, distance + 1]);
+        }
+      };
+    };
+  
+    return -1;
 };
 
 const createGraph = (edges) => {
