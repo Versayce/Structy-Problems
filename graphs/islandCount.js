@@ -9,7 +9,7 @@ const islandCount = (grid) => {
     return count;
   };
   
-  const explore = (grid, row, col, visited) => {
+const explore = (grid, row, col, visited) => {
     const rowInBounds = 0 <= row && row < grid.length;
     const colInBounds = 0 <= col && col < grid[0].length;
     if (!rowInBounds || !colInBounds) return false;
