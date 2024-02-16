@@ -11,16 +11,14 @@ const hasPath = (graph, src, dst) => {
     return false;
 };
 
-// const graph = {
-//     f: ['g', 'i'],
-//     g: ['h'],
-//     h: [],
-//     i: ['g', 'k'],
-//     j: ['i'],
-//     k: []
-// };
+const hasPathRecursive = (graph, src, dst) => {
+    if (src === dst) return true;
 
-// console.log(hasPath(graph, 'f', 'j')); // false
+    for (let neighbor of graph[src]) {
+        if (hasPathRecursive(graph, neighbor, dst) === true) return true;
+    }
+    return false;
+}
 
 const graph = {
     f: ['g', 'i'],
@@ -31,7 +29,18 @@ const graph = {
     k: []
 };
 
-console.log(hasPath(graph, 'f', 'k')); // true
+console.log(hasPathRecursive(graph, 'f', 'j')); // false
+
+// const graph = {
+//     f: ['g', 'i'],
+//     g: ['h'],
+//     h: [],
+//     i: ['g', 'k'],
+//     j: ['i'],
+//     k: []
+// };
+
+// console.log(hasPath(graph, 'f', 'k')); // true
 
 // const graph = {
 //     v: ['x', 'w'],
