@@ -1,9 +1,24 @@
 const largestComponent = (graph) => {
-
+    if (!graph) return 0;
+    const visited = new Set();
+    let largest = 0;
+    for (node in graph) {
+        const componentSize = traversal(graph, node, visited);
+        if ( componentSize > largest) {
+            largest = componentSize;
+        };
+    };
+    return largest;
 };
 
 const traversal = (graph, src, visited) => {
-
+    if (visited.has(String(src))) return 0
+    visited.add(String(src));
+    let size = 1;
+    for (neighbor of graph[src]) {
+        size += traversal(graph, neighbor, visited);  
+    };
+    return size;
 };
 
 // //Tests
