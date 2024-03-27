@@ -1,8 +1,12 @@
+//Time complexity: O(n * (n + e))
+//Space complexity: O(n)
+
+
 const longestPath = (graph) => {
-  //Storing an array of nodes with distance values so we can instantly see how many edges away from the end of one direction
+  //Storing an array of nodes with distance values so we can instantly check how many edges away from the end in a directed graph
   const distances = {};
 
-  //Initially looping to find our end nodes and assign them an initial length value of 0
+  //Looping to find our end nodes and assign them an initial length value of 0
   for (let node in graph) {
     if (graph[node].length === 0) {
       distances[node] = 0;
