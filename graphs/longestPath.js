@@ -1,4 +1,4 @@
-//Time complexity: O(n * (n + e))
+//Time complexity: O(n + m)
 //Space complexity: O(n)
 
 
