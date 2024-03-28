@@ -38,3 +38,58 @@ const semestersRequired = (numCourses, prereqs) => {
     distances[currentNode] = maxDistance + 1;
     return distances[currentNode];
   };
+
+
+/*
+const numCourses = 6;
+const prereqs = [
+  [1, 2],
+  [2, 4],
+  [3, 5],
+  [0, 5],
+];
+semestersRequired(numCourses, prereqs); // -> 3
+
+const numCourses = 7;
+const prereqs = [
+  [4, 3],
+  [3, 2],
+  [2, 1],
+  [1, 0],
+  [5, 2],
+  [5, 6],
+];
+semestersRequired(numCourses, prereqs); // -> 5
+
+const numCourses = 5;
+const prereqs = [
+  [1, 0],
+  [3, 4],
+  [1, 2],
+  [3, 2],
+];
+semestersRequired(numCourses, prereqs); // -> 2
+
+const numCourses = 12;
+const prereqs = [];
+semestersRequired(numCourses, prereqs); // -> 1
+
+const numCourses = 3;
+const prereqs = [
+  [0, 2],
+  [0, 1],
+  [1, 2],
+];
+semestersRequired(numCourses, prereqs); // -> 3
+
+const numCourses = 6;
+const prereqs = [
+  [3, 4],
+  [3, 0],
+  [3, 1],
+  [3, 2],
+  [3, 5],
+];
+semestersRequired(numCourses, prereqs); // -> 2
+
+*/
