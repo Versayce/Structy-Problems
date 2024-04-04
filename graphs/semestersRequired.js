@@ -2,6 +2,7 @@ const semestersRequired = (numCourses, prereqs) => {
     const graph = buildGraph(numCourses, prereqs);
     const distances = {};
     
+    //looping to find end nodes and assigning them a distance of 1 to represent semesters required to take the class
     for (let course in graph) {
       if (graph[course].length === 0) distances[course] = 1;
     }
@@ -13,13 +14,16 @@ const semestersRequired = (numCourses, prereqs) => {
     return Math.max(...Object.values(distances))
   };
   
+  //Building a graph with the given list
   const buildGraph = (numCourses, prereqs) => {
     const graph = {};
     
+    //creating an empty array for each node to contain neighboring nodes
     for (let i = 0; i < numCourses; i++) {
       graph[i] = [];
     }
     
+    //pushing list nodes to graph to form an adjacency list
     for (let prereq of prereqs) {
       const [a, b] = prereq;
       graph[a].push(b);
@@ -27,6 +31,7 @@ const semestersRequired = (numCourses, prereqs) => {
     return graph;
   }
   
+  //DFS traversal 
   const traversal = (graph, currentNode, distances) => {
     if (currentNode in distances) return distances[currentNode];
     
